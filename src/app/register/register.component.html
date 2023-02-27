@@ -1,0 +1,12 @@
+<form class="login" [formGroup]='registerForm' (ngSubmit)="PostData(registerForm)">
+  <h2>Welcome, User!</h2>
+  <p>Please Register</p>
+  <input type="text" placeholder="User Name" formControlName="runame" />
+  <span *ngIf="registerForm.get('runame')?.errors?.['required']">Username is required!</span>
+  <input type="text" placeholder="Email" formControlName="remail" />
+  <span *ngIf="registerForm.get('remail')?.errors?.['email']">Enter valid email id!</span>
+  <span *ngIf="registerForm.get('remail')?.errors?.['required']">Email is required!</span>
+  <input type="password" placeholder="Password" formControlName="rpassword" />
+  <span *ngIf="registerForm.get('rpassword')?.errors?.['required']">Password is required!</span>
+  <input type="submit" value="Register" />
+</form>

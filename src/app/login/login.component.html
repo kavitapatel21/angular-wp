@@ -1,0 +1,15 @@
+<form class="login" [formGroup]='loginForm' (ngSubmit)="PostData(loginForm)">
+    <h2>Welcome, User!</h2>
+    <p>Please log in</p>
+    <input type="text" placeholder="Username" formControlName="luname" />
+    <span *ngIf="loginForm.get('luname')?.errors?.['required']">Username is required!</span>
+    <!--<span *ngIf="loginForm.get('lemail')?.errors?.['required']">Email is required!</span>
+    <span *ngIf="loginForm.get('lemail')?.errors?.['email']">Enter valid email id!</span>-->
+    <input type="password" placeholder="Password" formControlName="lpassword" />
+    <span *ngIf="loginForm.get('lpassword')?.errors?.['required']">Password is required!</span>
+    <input type="submit" value="Log In" />
+    <div class="links">
+        <a href="#">Forgot password</a>
+        <a routerLink="/register">Register</a>
+    </div>
+</form>
